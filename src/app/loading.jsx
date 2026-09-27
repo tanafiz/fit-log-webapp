@@ -6,9 +6,7 @@ export default function Loading() {
                 <p className="mt-3 text-[10px] text-gray-500">
                     Loading workouts…
                 </p>
-
             </div>
-
         </main>
     );
 }
