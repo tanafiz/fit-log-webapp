@@ -1,4 +1,4 @@
-const API_URL = "https://api.api-store.workers.dev/api/fitlog";
+const API_URL = "https://api.abcz.workers.dev/api/fitlog";
 
 export async function getWorkouts() {
     const response = await fetch(API_URL);
@@ -11,11 +11,8 @@ export async function getWorkouts() {
 }
 
 export async function getWorkout(id) {
-    const response = await fetch(`${API_URL}/${id}`);
-
-    if (!response.ok) {
-        return null;
-    }
-
-    return response.json();
+    const workouts = await getWorkouts();
+    return workouts.find(
+        (workout) => String(workout.id) === String(id)
+    ) || null;
 }
